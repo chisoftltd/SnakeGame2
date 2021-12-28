@@ -1,4 +1,5 @@
 from turtle import Turtle
+import os
 ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")
 
@@ -8,7 +9,7 @@ class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        with open("Score.txt") as f:
+        with open(os.path.join("C:/Users/benjamin.chinwe/OneDrive - Dawnfresh Seafoods Ltd/Desktop","Score.txt")) as f:
             self.high_score = int(f.read())
         self.color("white")
         self.penup()
@@ -23,7 +24,7 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("Score.txt", mode="w") as f:
+            with open(os.path.join("C:/Users/benjamin.chinwe/OneDrive - Dawnfresh Seafoods Ltd/Desktop","Score.txt"), mode="w") as f:
                 f.write(str(self.high_score))
         self.score = 0
         self.update_scoreboard()
