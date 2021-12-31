@@ -3,7 +3,7 @@ import random
 
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
-COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "violet", "black", "gold"]
+COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "violet", "gold"]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -11,12 +11,11 @@ LEFT = 180
 RIGHT = 0
 
 
-class Snake:
+class Snake():
 
     def __init__(self):
         self.segments = []
         self.create_snake()
-        self.color(random.choice(COLORS))
         self.head = self.segments[0]
 
     def create_snake(self):
@@ -25,7 +24,7 @@ class Snake:
 
     def add_segment(self, position):
         new_segment = Turtle("square")
-        new_segment.color("white")
+        new_segment.color(random.choice(COLORS))
         new_segment.penup()
         new_segment.goto(position)
         self.segments.append(new_segment)
