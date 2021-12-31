@@ -1,5 +1,9 @@
 from turtle import Turtle
+import random
+
+
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "violet", "black", "gold"]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -12,6 +16,7 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
+        self.color(random.choice(COLORS))
         self.head = self.segments[0]
 
     def create_snake(self):
